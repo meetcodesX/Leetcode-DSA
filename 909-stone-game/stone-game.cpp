@@ -1,6 +1,20 @@
 class Solution {
 public:
+    bool solve(int i,int j,vector<int>& piles,vector<vector<int>>& dp){
+        if(i == j) return piles[i];
+
+        if(dp[i][j] != INT_MIN) return dp[i][j];
+
+        int takeleft = piles[i] - solve(i+1,j,piles,dp);
+        int takeright = piles[j] - solve(i,j-1,piles,dp);
+
+        return dp[i][j] = max(takeleft,takeright);
+    }
     bool stoneGame(vector<int>& piles) {
-        return true;
+        int n = piles.size();
+        vector<vector<int>> dp(n,vector<int>(n,-1));
+
+        if(solve(0,n-1,piles,dp) > 0) return true;
+        else return false;
     }
 };
