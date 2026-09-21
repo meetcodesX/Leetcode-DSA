@@ -11,6 +11,6 @@ public:
         for(auto it : mp){
             g = gcd(g,it.second);
         }
-        return g>1;
+        return g > 1;
     }
 };
