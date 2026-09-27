@@ -3,7 +3,6 @@ public:
     long long putMarbles(vector<int>& weights, int k) {
         vector<long long> pairs;
         int n = weights.size();
-        long long ans = 0;
 
         for(int i=0;i<n-1;i++){
             pairs.push_back((long long)weights[i] + weights[i+1]);
