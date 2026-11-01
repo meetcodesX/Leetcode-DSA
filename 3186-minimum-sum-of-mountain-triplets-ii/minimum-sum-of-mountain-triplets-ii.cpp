@@ -14,7 +14,7 @@ public:
 
         for(int j=1;j<n-1;j++){
             if(leftmin < nums[j] && suffix[j+1] < nums[j]){
-                long long sum = leftmin + nums[j] + suffix[j+1];
+                long long sum = (long long)leftmin + nums[j] + suffix[j+1];
                 minSum = min(minSum,sum);
             }
             leftmin = min(leftmin,nums[j]);
